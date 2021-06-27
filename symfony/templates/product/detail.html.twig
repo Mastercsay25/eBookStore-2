@@ -3,30 +3,51 @@
 {% block title %}{{ product.name }}{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row mt-3 mb-4">
-            <div class="col-md-4">
-                <img src="https://via.placeholder.com/600x400" alt="{{ product.name }}" class="img-fluid">
-            </div>
-            <div class="col-md-8">
-                <h1 class="mt-4 mt-md-0">{{ product.name }}</h1>
-                <h2>{{ product.price }} €</h2>
-                <hr>
-                <b>Description: </b>{{ product.description }}
-                {{ form_start(form, {'attr': {'class': 'mt-4 p-4 bg-light'}}) }}
-                <div class="form-group">
-                    {{ form_label(form.quantity) }}
-                    {{ form_widget(form.quantity, {
-                        'attr': {
-                            'class': 'form-control ' ~ (form.quantity.vars.valid ? '' : 'is-invalid')
-                        }
-                    }) }}
-                    <div class="invalid-feedback">
-                        {{ form_errors(form.quantity) }}
+    <div class="container mt-5 mb-5">
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-6 border-end">
+                    <div class="d-flex flex-column justify-content-center">
+                        <div class="main_image"> <img src="https://i.imgur.com/TAzli1U.jpg" id="main_product_image" width="350"> </div>
+                        <div class="thumbnail_images">
+                            <ul id="thumbnail">
+                                <li><img onclick="changeImage(this)" src="https://i.imgur.com/TAzli1U.jpg" width="70"></li>
+                                <li><img onclick="changeImage(this)" src="https://i.imgur.com/w6kEctd.jpg" width="70"></li>
+                                <li><img onclick="changeImage(this)" src="https://i.imgur.com/L7hFD8X.jpg" width="70"></li>
+                                <li><img onclick="changeImage(this)" src="https://i.imgur.com/6ZufmNS.jpg" width="70"></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
-                {{ form_end(form) }}
+                <div class="col-md-6">
+                    <div class="p-3 right-side">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3>{{ product.name }}</h3> <span class="heart"><i class='bx bx-heart'></i></span>
+                        </div>
+                        <div class="mt-2 pr-3 content">
+                            <p>{{ product.description }}</p>
+                        </div>
+                        <h3>{{ product.price }} €</h3>
+                        <div class="ratings d-flex flex-row align-items-center">
+                            <div class="d-flex flex-row"> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i> </div> <span>441 reviews</span>
+                        </div>
+
+                        {{ form_start(form, {'attr': {'class': 'mt-4 p-4 bg-light buttons d-flex flex-row gap-3'}}) }}
+                        <div class="form-group">
+                            {{ form_label(form.quantity) }}
+                            {{ form_widget(form.quantity, {
+                                'attr': {
+                                    'class': 'form-control ' ~ (form.quantity.vars.valid ? '' : 'is-invalid')
+                                }
+                            }) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.quantity) }}
+                            </div>
+                        </div>
+                        {{ form_widget(form.add, {'attr': {'class': 'btn btn-dark mt-auto'}}) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
