@@ -11,27 +11,14 @@
         <link href="/css/form-validation.css" rel="stylesheet">
         <link href="/css/navbar-top-fixed.css" rel="stylesheet">
         <link href="/css/custom.css" rel="stylesheet">
+        <link href="/css/signin.css" rel="stylesheet">
     {% endblock %}
     <script src="/js/bootstrap.bundle.min.js"></script>
 
     <script src="/js/form-validation.js"></script>
 </head>
 <body>
-<style>
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-    }
 
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-        }
-    }
-</style>
 {% block header %}
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -48,7 +35,7 @@
                         <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" >Disabled</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -56,11 +43,12 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
 
-                <a href="{{ path('cart') }}" class="btn btn-outline-success ms-1" type="submit">Cart</a>
+                <a href="{{ path('cart') }}" class="btn btn-outline-success ms-1" >Cart</a>
 
             </div>
         </div>
     </nav>
+
 {% endblock %}
 
 {% block body %}{% endblock %}

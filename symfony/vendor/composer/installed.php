@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'fc89a899ac58fb1f6ee5758377c001ad4ef4f389',
+        'reference' => '27a8f99ed46007e18720313829f885e7bbfcb375',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'fc89a899ac58fb1f6ee5758377c001ad4ef4f389',
+            'reference' => '27a8f99ed46007e18720313829f885e7bbfcb375',
             'dev_requirement' => false,
         ),
         'composer/package-versions-deprecated' => array(
@@ -199,6 +199,15 @@
             'reference' => '56070bebac6e77230ed7d306ad13528e60732871',
             'dev_requirement' => false,
         ),
+        'easycorp/easyadmin-bundle' => array(
+            'pretty_version' => 'v3.3.2',
+            'version' => '3.3.2.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../easycorp/easyadmin-bundle',
+            'aliases' => array(),
+            'reference' => '9672b09ce29c910fd74fe7769dd709c738ea43d4',
+            'dev_requirement' => false,
+        ),
         'egulias/email-validator' => array(
             'pretty_version' => '3.1.1',
             'version' => '3.1.1.0',
@@ -254,7 +263,7 @@
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
             'reference' => '4432ba399e47c66624bc73c8c0f811e5c109576f',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'ocramius/package-versions' => array(
             'dev_requirement' => false,
@@ -1061,6 +1070,15 @@
             'reference' => 'e66119f3de95efc359483f810c4c3e6436279436',
             'dev_requirement' => false,
         ),
+        'symfony/polyfill-uuid' => array(
+            'pretty_version' => 'v1.23.0',
+            'version' => '1.23.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-uuid',
+            'aliases' => array(),
+            'reference' => '9165effa2eb8a31bb3fa608df9d529920d21ddd9',
+            'dev_requirement' => false,
+        ),
         'symfony/process' => array(
             'pretty_version' => 'v5.3.2',
             'version' => '5.3.2.0',
@@ -1242,6 +1260,15 @@
             'install_path' => __DIR__ . '/../symfony/twig-bundle',
             'aliases' => array(),
             'reference' => 'd386aaa46d1afe5afb51b39675fc2ab206159206',
+            'dev_requirement' => false,
+        ),
+        'symfony/uid' => array(
+            'pretty_version' => 'v5.3.2',
+            'version' => '5.3.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/uid',
+            'aliases' => array(),
+            'reference' => '7f7703a1d5e106b3619d556e8313a575a47ac3fa',
             'dev_requirement' => false,
         ),
         'symfony/validator' => array(

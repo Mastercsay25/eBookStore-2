@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order - Customer information{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <main>
+            <div class="py-5 text-center">
+                <h2>Checkout form</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-primary">Your cart</span>
+                        <span class="badge bg-primary rounded-pill">{{ products.count }}</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        {% for item in products %}
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">{{ item.product.name }}</h6>
+                                <small class="text-muted">{{ item.product.description }}</small>
+                            </div>
+                            <span class="text-muted">{{ item.product.price }} €</span>
+                        </li>
+                        {% endfor %}
+                        {{ form_end(form, {'render_rest': false}) }}
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total </span>
+                            <strong>{{ total }} €</strong>
+                        </li>
+                    </ul>
+
+                </div>
+
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Billing address</h4>
+                {{ form_start(form) }}
+                <form action="" method="POST">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">First name</label>
+                            {{ form_widget(form.firstname,{'attr': {'class': 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Last name</label>
+                            {{ form_widget(form.lastname,{'attr': {'class': 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            {{ form_widget(form.email,{'attr': {'class': 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="address" class="form-label">Address</label>
+                            {{ form_widget(form.address,{'attr': {'class': 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                Please enter your shipping address.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="address2" class="form-label">Address 2 <span
+                                        class="text-muted">(Optional)</span></label>
+                            {{ form_widget(form.adress2,{'attr': {'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="country" class="form-label">Country</label>
+                            {{ form_widget(form.country,{'attr': {'class': 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <label for="zip" class="form-label">Zip</label>
+                            {{ form_widget(form.postalcode,{'attr': {'class': 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                Zip code required.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="phone" class="form-label">Phone</label>
+                            {{ form_widget(form.phone,{'attr': {'class': 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                Phone required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3">Payment</h4>
+
+                    <div class="my-3">
+                        <div class="form-check">
+                            {{ form_widget(form.payment_method,{'attr': {'class': 'form-check-input'}}) }}
+                            <label class="form-check-label" for="form_payment_method">Cash on delivery</label>
+                        </div>
+                    </div>
+
+                    <h4 class="mb-3">Shipping Method</h4>
+                    <div class="my-3">
+                        <div class="form-check">
+                            {{ form_widget(form.shipping_method,{'attr': {'class': 'form-check-input'}}) }}
+
+                            <label class="form-check-label" for="form_shipping_method">Carrier</label>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    {{ form_widget(form.save, {'attr': {'class': 'w-100 btn btn-primary btn-lg'}}) }}
+                    {{ form_end(form) }}
+
+                </form>
+            </div>
+
+    </main>
+
+
+    </div>
+
+{% endblock %}
+

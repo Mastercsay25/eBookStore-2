@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order - Customer information{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <main>
+            {{cart.items.count}}
+            {{ username }}
+        </main>
+
+    </div>
+
+{% endblock %}

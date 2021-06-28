@@ -6,7 +6,7 @@ use App\Entity\Order;
 use App\Factory\OrderFactory;
 use App\Storage\CartSessionStorage;
 use Doctrine\ORM\EntityManagerInterface;
-
+use App\Entity\OrderDetails;
 /**
  * Class CartManager
  * @package App\Manager
@@ -22,7 +22,6 @@ class CartManager
      * @var OrderFactory
      */
     private $cartFactory;
-
     /**
      * CartManager constructor.
      *
@@ -57,10 +56,12 @@ class CartManager
     }
     public function save(Order $cart): void
     {
+        //$cart->setOrderDetailID($this->entityManager->getConnection()->lastInsertId()+1);
         // Persist in database
         $this->entityManager->persist($cart);
         $this->entityManager->flush();
         // Persist in session
         $this->cartSessionStorage->setCart($cart);
+
     }
 }

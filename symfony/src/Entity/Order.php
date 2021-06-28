@@ -47,11 +47,6 @@ class Order
      */
     private $updatedAt;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=OrderDetails::class, inversedBy="orders")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $orderDetailID;
 
     public function __construct()
     {
@@ -148,6 +143,14 @@ class Order
 
         return $this;
     }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
     /**
      * Calculates the order total.
      *
@@ -164,15 +167,4 @@ class Order
         return $total;
     }
 
-    public function getOrderDetailID(): ?OrderDetails
-    {
-        return $this->orderDetailID;
-    }
-
-    public function setOrderDetailID(?OrderDetails $orderDetailID): self
-    {
-        $this->orderDetailID = $orderDetailID;
-
-        return $this;
-    }
 }
