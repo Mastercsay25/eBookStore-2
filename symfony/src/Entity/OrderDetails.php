@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Order;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * @ORM\Entity(repositoryClass=OrderDetailsRepository::class)
  */
@@ -279,7 +281,6 @@ class OrderDetails
     {
         return $this->order_id;
     }
-
     public function setOrderId(Order $order_id): self
     {
         $this->order_id = $order_id;
